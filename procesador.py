@@ -31,8 +31,7 @@ class Procesador:
             ruta_csv: ruta al archivo CSV (string)
         """
         # TODO: guardar self.ruta = ruta_csv y self._datos = []
-        self.ruta = ruta_csv
-        self._datos = []
+        raise NotImplementedError("TODO: implementar __init__")
 
     def cargar_datos(self):
         """Leer el CSV con DictReader, convertir tipos y guardar en self._datos.
@@ -55,15 +54,7 @@ class Procesador:
             list[dict]: [{"temperatura": 25.5, "humedad": 60, "luz": 800}, ...]
         """
         # TODO: completar
-
-        file = open(self.ruta, newline="")
-        reader = csv.DictReader(file)
-        for row in reader:
-            row["temperatura"] = float(row["temperatura"])
-            row["humedad"] = int(row["humedad"])
-            row["luz"] = int(row["luz"])
-            self._datos.append(row)
-        return self._datos
+        raise NotImplementedError("TODO: implementar cargar_datos")
 
     def calcular_estadisticas(self):
         """Calcular promedio, max y min para cada columna.
@@ -78,25 +69,7 @@ class Procesador:
             }
         """
         # TODO: completar
-        if len(self._datos) == 0:
-            self.cargar_datos()
-        temp_prom = sum([d["temperatura"] for d in self._datos]) / len(self._datos)
-        temp_max = max([d["temperatura"] for d in self._datos])
-        temp_min = min([d["temperatura"] for d in self._datos])
-
-        hum_prom = sum([d["humedad"] for d in self._datos]) / len(self._datos)
-        hum_max = max([d["humedad"] for d in self._datos])
-        hum_min = min([d["humedad"] for d in self._datos])
-
-        luz_prom = sum([d["luz"] for d in self._datos]) / len(self._datos)
-        luz_max = max([d["luz"] for d in self._datos])
-        luz_min = min([d["luz"] for d in self._datos])
-
-        return {
-            "temperatura": {"promedio": temp_prom, "max": temp_max, "min": temp_min},
-            "humedad": {"promedio": hum_prom, "max": hum_max, "min": hum_min},
-            "luz": {"promedio": luz_prom, "max": luz_max, "min": luz_min},
-        }
+        raise NotImplementedError("TODO: implementar calcular_estadisticas")
 
     def detectar_alertas(self, limite=35):
         """Filtrar filas donde temperatura supere el limite.
@@ -110,9 +83,7 @@ class Procesador:
             list[dict]: filas que superan el limite
         """
         # TODO: completar
-        if len(self._datos) == 0:
-            self.cargar_datos()
-        return [d for d in self._datos if d["temperatura"] > limite]
+        raise NotImplementedError("TODO: implementar detectar_alertas")
 
     def contar_alertas(self, limite=35):
         """Cuantas alertas hay (usar detectar_alertas).
@@ -124,4 +95,4 @@ class Procesador:
             int: cantidad de filas en alerta
         """
         # TODO: completar
-        return len(self.detectar_alertas(limite))
+        raise NotImplementedError("TODO: implementar contar_alertas")

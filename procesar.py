@@ -45,14 +45,7 @@ def leer_csv(ruta):
     """
     # TODO: importar csv, abrir el archivo, crear reader, saltar header,
     #       recorrer con for, imprimir, guardar en lista, devolver
-    file = open(ruta, newline="")
-    reader = csv.reader(file)
-    next(reader)
-    lista = []
-    for row in reader:
-        print(f"T: {row[0]}°C  H: {row[1]}%  L: {row[2]}lm")
-        lista.append(row)
-    return lista
+    raise NotImplementedError("TODO: implementar leer_csv")
 
 
 def mostrar_resumen(datos):
@@ -64,7 +57,7 @@ def mostrar_resumen(datos):
         Se leyeron 10 registros.
     """
     # TODO: imprimir la cantidad de filas con el formato indicado
-    print(f"Se leyeron {len(datos)} registros.")
+    raise NotImplementedError("TODO: implementar mostrar_resumen")
 
 
 def contar_superan(datos, columna, limite):
@@ -85,11 +78,7 @@ def contar_superan(datos, columna, limite):
         contar_superan(datos, 0, 27)  # filas con temperatura > 27
     """
     # TODO: recorrer datos, convertir a float, comparar, contar
-    contador = 0
-    for dato in datos:
-        if float(dato[columna]) > limite:
-            contador += 1
-    return contador
+    raise NotImplementedError("TODO: implementar contar_superan")
 
 
 def filtrar_por(datos, columna, limite):
@@ -107,8 +96,4 @@ def filtrar_por(datos, columna, limite):
         list[list]: filas que cumplen la condicion
     """
     # TODO: recorrer datos, comparar, armar lista con las que cumplen
-    lista = []
-    for dato in datos:
-        if float(dato[columna]) > limite:
-            lista.append(dato)
-    return lista
+    raise NotImplementedError("TODO: implementar filtrar_por")

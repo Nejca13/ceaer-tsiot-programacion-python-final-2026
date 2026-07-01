@@ -29,11 +29,7 @@ def calcular_promedio(valores):
         calcular_promedio([10, 20, 30]) → 20.0
     """
     # TODO: calcular y devolver el promedio
-    if len(valores) == 0:
-        return 0.0
-    else:
-        promedio = sum(valores) / len(valores)
-        return promedio
+    pass
 
 
 def calcular_maximo(valores):
@@ -48,11 +44,7 @@ def calcular_maximo(valores):
         float: el maximo
     """
     # TODO: calcular y devolver el maximo
-    if len(valores) == 0:
-        return 0.0
-    else:
-        maximo = max(valores)
-        return maximo
+    raise NotImplementedError("TODO: implementar calcular_maximo")
 
 
 def calcular_minimo(valores):
@@ -67,11 +59,7 @@ def calcular_minimo(valores):
         float: el minimo
     """
     # TODO: calcular y devolver el minimo
-    if len(valores) == 0:
-        return 0.0
-    else:
-        minimo = min(valores)
-        return minimo
+    raise NotImplementedError("TODO: implementar calcular_minimo")
 
 
 def convertir_temperatura(valor, origen):
@@ -93,12 +81,7 @@ def convertir_temperatura(valor, origen):
         convertir_temperatura(77.0, "F") → 25.0
     """
     # TODO: convertir segun origen y devolver
-    if origen == "C":
-        fahrenheit = valor * 9 / 5 + 32
-        return fahrenheit
-    else:
-        celsius = (valor - 32) * 5 / 9
-        return celsius
+    raise NotImplementedError("TODO: implementar convertir_temperatura")
 
 
 def analizar_columna(datos, columna):
@@ -124,8 +107,4 @@ def analizar_columna(datos, columna):
     y calcular_minimo que ya escribiste arriba.
     """
     # TODO: extraer columna, convertir, llamar a las funciones, devolver dict
-    valores = [float(fila[columna]) for fila in datos]
-    promedio = calcular_promedio(valores)
-    maximo = calcular_maximo(valores)
-    minimo = calcular_minimo(valores)
-    return {"promedio": promedio, "max": maximo, "min": minimo}
+    raise NotImplementedError("TODO: implementar analizar_columna")
